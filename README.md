@@ -2,7 +2,7 @@
 
 
 To replace the default ESX.ShowNotification
-
+```
 function ESX.ShowNotification(msg, notifyType, length)
     local validTypes = {error = true, success = true, info = true}
     local notificationType = validTypes[notifyType] and notifyType or 'info'
@@ -12,7 +12,10 @@ function ESX.ShowNotification(msg, notifyType, length)
     end
     TriggerEvent('myNotify:send', msg, duration, notificationType)
 end
-
+```
 ---------------------------------------------------------------------------------------------------------
+
 Exports
+```
 exports['11Notify']:sendNotification( message , duration, type)
+```
