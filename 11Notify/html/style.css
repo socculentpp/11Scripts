@@ -1,0 +1,118 @@
+#notifications {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+    display: block;
+}
+
+.notify {
+    background-color: rgba(0, 0, 0, 0.582); /* Semi-transparent background */
+    color: rgb(236, 233, 233);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Rounded corners */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.425); /* Subtle shadow */
+    animation: fadeIn 0.4s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* Align items at the start */
+    position: relative; /* Allow positioning of the bottom line */
+}
+
+.icon {
+    width: 30px; /* Size of the icon */
+    height: 30px;
+    margin-right: 10px; /* Space between the icon and the text */
+}
+
+/* Curved bottom line with gradient */
+.notify-success-line,
+.notify-error-line,
+.notify-default-line {
+    height: 4px; /* Line thickness */
+    width: calc(100% - 30px); /* Reduce width to allow the curve */
+    margin-top: 20px; /* Space between the notification and the line */
+    border-radius: 10px; /* Add rounded corners to the line */
+    background: linear-gradient(to right, 
+        rgba(0, 128, 0, 0.1) 0%, 
+        rgba(0, 128, 0, 0.3) 20%, 
+        rgba(0, 128, 0, 0.6) 50%, 
+        rgba(0, 128, 0, 0.3) 80%, 
+        rgba(0, 128, 0, 0.1) 100%); /* Green gradient for success */
+    position: absolute;
+    bottom: 5px;
+    left: 15px; /* Position the line inside the notification box */
+}
+
+.notify-success-line {
+    background: linear-gradient(to right, 
+        rgba(0, 128, 0, 0.1) 0%, 
+        rgba(0, 128, 0, 0.363) 20%, 
+        rgba(0, 128, 0, 0.747) 50%, 
+        rgba(0, 128, 0, 0.39) 80%, 
+        rgba(0, 128, 0, 0.185) 100%); /* Green gradient for success */
+}
+
+.notify-error-line {
+    background: linear-gradient(to right, 
+        rgba(255, 0, 0, 0.1) 0%, 
+        rgba(255, 0, 0, 0.3) 20%, 
+        rgba(255, 0, 0, 0.6) 50%, 
+        rgba(255, 0, 0, 0.3) 80%, 
+        rgba(255, 0, 0, 0.1) 100%); /* Red gradient for error */
+}
+
+.notify-default-line {
+    background: linear-gradient(to right, 
+        rgba(0, 0, 255, 0.1) 0%, 
+        rgba(0, 0, 255, 0.3) 20%, 
+        rgba(0, 0, 255, 0.6) 50%, 
+        rgba(0, 0, 255, 0.3) 80%, 
+        rgba(0, 0, 255, 0.1) 100%); /* Blue gradient for default (info) */
+}
+
+/* Success notification styling */
+.notify.success {
+    background-color: rgba(0, 128, 0, 0.8); /* Green background */
+    border-left: 5px solid green;
+}
+
+.notify.success .notify-text {
+    color: white;
+}
+
+/* Error notification styling */
+.notify.error {
+    background-color: rgba(255, 0, 0, 0.8); /* Red background */
+    border-left: 5px solid red;
+}
+
+.notify.error .notify-text {
+    color: white;
+}
+
+/* Default notification styling (info) */
+.notify.default {
+    background-color: rgba(0, 0, 255, 0.8); /* Blue background */
+    border-left: 5px solid blue;
+}
+
+.notify.default .notify-text {
+    color: white;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
