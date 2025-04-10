@@ -1,5 +1,10 @@
 # 11Scripts
 
+----------------------------------------------------------------------------------------------------
+installation
+```
+Place in resource folder and ensure it
+```
 
 To replace the default ESX.ShowNotification
 ```
